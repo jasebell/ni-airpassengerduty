@@ -93,7 +93,7 @@
                           (:long-haul row)
                           (:airline row))) (find-routes departure-airport)))
 
-(defn get-longhaul-average [departure-airport]
+(defn get-longhaul-percentage [departure-airport]
   (let [routes (find-routes departure-airport)]
     (double (* 100 (/ (count (filter #(= true (:long-haul %)) routes)) (count routes))))))
 
